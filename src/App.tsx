@@ -1,31 +1,27 @@
-import { useEffect } from 'react'
 import './App.css'
-import getRecipe from './utils/fetches/getRecipe'
-import getIngredients from './utils/fetches/getIngredients';
-import getPopularRecipes from './utils/fetches/getPopularRecipes';
-import getNewestRecipes from './utils/fetches/getNewestRecipes';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import RootLayout from './rootLayout/RootLayout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Detail from './pages/Detail';
+import Recipes from './pages/Recipes';
 
 function App() {
 
-  useEffect(() => {
-    getRecipe();
-  }, [])
-
-  useEffect(() => {
-    getIngredients();
-  }, [])
-
-  useEffect(() => {
-    getPopularRecipes();
-  }, [])
-
-  useEffect(() => {
-    getNewestRecipes();
-  }, [])
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<RootLayout />}>
+        <Route index element={<Home />} />
+        <Route path='recipes' element={<Recipes />} />
+        <Route path='about' element={<About />} />
+        <Route path='detail' element={<Detail />} />
+      </Route>
+    )
+  )
 
   return (
     <>
-      <h1 className='text-3xl font-bold underline'>Recipes App</h1>
+        <RouterProvider router={router} />
     </>
   )
 }

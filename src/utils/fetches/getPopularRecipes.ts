@@ -1,14 +1,18 @@
-import supabase from "../backend/setupSupabase"
+import supabase from "../backend/setupSupabase";
+import { Tables } from "../backend/supabase";
 
-const getPopularRecipes = async () => {
-    const { data, error} = await supabase
-    .from('recipes')
-    .select('*')
-    .order('rating', {ascending: false})
-    .limit(3)
+export type Recipe = Tables<"recipes">;
 
-    console.log(data);
-    if(error) console.error(error);
-}
+const getPopularRecipes = async (setPopRecipes: React.Dispatch<React.SetStateAction<Recipe[] | null>>)  => {
+    const { data, error } = await supabase
+    .from("recipes")
+    .select("*")
+    .order("rating", { ascending: false })
+    .limit(3);
+
+    if (error) console.error(error);
+
+    setPopRecipes(data);
+};
 
 export default getPopularRecipes;
