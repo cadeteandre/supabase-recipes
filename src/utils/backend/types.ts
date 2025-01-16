@@ -58,8 +58,6 @@ export type Database = {
           created_at: string
           id: string
           name: string
-          quantity: number | null
-          recipe_id: string
           unit: string | null
         }
         Insert: {
@@ -67,8 +65,6 @@ export type Database = {
           created_at?: string
           id?: string
           name: string
-          quantity?: number | null
-          recipe_id: string
           unit?: string | null
         }
         Update: {
@@ -76,13 +72,36 @@ export type Database = {
           created_at?: string
           id?: string
           name?: string
+          unit?: string | null
+        }
+        Relationships: []
+      }
+      ingredients_recipes: {
+        Row: {
+          ingredient_id: string
+          quantity: number | null
+          recipe_id: string
+        }
+        Insert: {
+          ingredient_id: string
+          quantity?: number | null
+          recipe_id: string
+        }
+        Update: {
+          ingredient_id?: string
           quantity?: number | null
           recipe_id?: string
-          unit?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "ingredients_recipe_id_fkey"
+            foreignKeyName: "ingredients_recipes_ingredient_id_fkey"
+            columns: ["ingredient_id"]
+            isOneToOne: false
+            referencedRelation: "ingredients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "ingredients_recipes_recipe_id_fkey"
             columns: ["recipe_id"]
             isOneToOne: false
             referencedRelation: "recipes"

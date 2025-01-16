@@ -3,13 +3,13 @@ import DetailBanner from "../components/DetailBanner";
 import RecipeDetails from "../components/RecipeDetails";
 import { useEffect, useState } from "react";
 import getRecipeById from "../utils/fetches/getRecipeById";
-import { Recipe } from "../utils/fetches/getPopularRecipes";
+import { JoinedRecipe } from "../utils/backend/joinedRecipeTypes";
 
 const Detail = () => {
 
     const { recipeId } = useParams()
 
-    const [recipeById, setRecipeById] = useState<Recipe | null>(null)
+    const [recipeById, setRecipeById] = useState<JoinedRecipe | null>(null);
 
     useEffect(() => {
         const recipeIdString: string = recipeId ? recipeId?.toString() : '';
