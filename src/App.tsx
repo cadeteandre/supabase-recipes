@@ -14,7 +14,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path='recipes' element={<Recipes />} />
         <Route path='about' element={<About />} />
-        <Route path='detail' element={<Detail />} />
+        <Route path='detail/:recipeId' element={<Detail />} />
       </Route>
     )
   )
