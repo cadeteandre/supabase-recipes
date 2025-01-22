@@ -5,8 +5,10 @@ const Header = () => {
         <header className="flex justify-between items-center">
             <h1>Logo</h1>
             <nav className="flex gap-4 items-center">
+                <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/recipes'}>Recipes</NavLink>
                 <NavLink to={'/profile'}>Profile</NavLink>
+                <NavLink to={'/login'}>Login</NavLink>
                 <NavLink to={'/signup'}>Signup</NavLink>
             </nav>
         </header>

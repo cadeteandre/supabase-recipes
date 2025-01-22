@@ -8,6 +8,7 @@ import Recipes from './pages/Recipes';
 import SignupPage from './pages/SignupPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProfilePage from './pages/ProfilePage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
 
@@ -17,8 +18,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path='recipes' element={<Recipes />} />
         <Route path='about' element={<About />} />
-        <Route path='detail/:recipeId' element={<Detail />} />
         <Route path='signup' element={<SignupPage />} />
+        <Route path='login' element={<LoginPage />} />
         
         {/* Protected Routes */}
         <Route 
@@ -26,6 +27,14 @@ function App() {
           element={
             <ProtectedRoute>
               <ProfilePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path='profile/detail/:recipeId' 
+          element={
+            <ProtectedRoute>
+              <Detail />
             </ProtectedRoute>
           }
         />
@@ -39,5 +48,4 @@ function App() {
     </>
   )
 }
-
 export default App

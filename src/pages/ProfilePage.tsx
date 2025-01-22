@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import supabase from '../utils/backend/setupSupabase';
+import { Link } from 'react-router-dom';
 
 export default function ProfilePage() {
   interface Profile {
@@ -47,8 +48,20 @@ export default function ProfilePage() {
     fetchProfile();
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+
+      console.log('User logged out');
+      setProfile(null);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   if (loading) return <p>Loading...</p>;
-  if (!profile) return <p>No profile data available</p>;
+  if (!profile) return <Link className='btn' to={'/login'}>To Login</Link>;
 
   return (
     <div>
@@ -58,6 +71,7 @@ export default function ProfilePage() {
       <p>Last Name: {profile.last_name}</p>
       <p>Account Created: {profile.created_at}</p>
       <p>Last Updated: {profile.updated_at}</p>
+      <button className='btn' onClick={handleLogout}>Logout</button>
     </div>
   );
 }
