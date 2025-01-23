@@ -9,6 +9,7 @@ import SignupPage from './pages/SignupPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProfilePage from './pages/ProfilePage';
 import LoginPage from './pages/LoginPage';
+import Favorites from './pages/Favorites';
 
 function App() {
 
@@ -35,6 +36,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Detail />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path='profile/favorites' 
+          element={
+            <ProtectedRoute>
+              <Favorites />
             </ProtectedRoute>
           }
         />

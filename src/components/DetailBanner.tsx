@@ -9,8 +9,18 @@ const DetailBanner: React.FC<IDetailsBannerProps> = ({ recipeById }) => {
         <section>
             {recipeById ? (
                 <>
-                    <img className="w-96 rounded-lg" src={`${recipeById.image_url}`} alt={`${recipeById.name}`} />
-                    <h1 className="font-bold">{recipeById.name}</h1>
+                    <div
+                        className="hero min-h-80"
+                        style={{
+                            backgroundImage: `url(${recipeById.image_url})`,
+                        }}>
+                        <div className="hero-overlay bg-opacity-60"></div>
+                        <div className="hero-content text-neutral-content text-center">
+                            <div className="max-w-md">
+                                <h1 className="mb-5 text-5xl font-bold">{recipeById.name}</h1>
+                            </div>
+                        </div>
+                    </div>
                 </>
             ) : <p>Loading...</p> }
         </section>
