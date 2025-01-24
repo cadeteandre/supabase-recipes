@@ -1,5 +1,5 @@
 import supabase from "../backend/setupSupabase";
-import { Tables } from "../backend/supabase";
+import { Tables } from "../backend/types";
 
 export type Recipe = Tables<"recipes">;
 
