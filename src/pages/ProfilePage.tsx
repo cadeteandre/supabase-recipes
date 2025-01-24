@@ -74,6 +74,7 @@ export default function ProfilePage() {
           <div className="card-actions justify-center">
             <button className='btn' onClick={handleLogout}>Logout</button>
             <Link className='btn bg-lime-700 text-slate-100' to={'./favorites'}>Favorites</Link>
+            <Link className='btn bg-lime-700 text-slate-100' to={'./recipe-create'}>Create Recipe</Link>
           </div>
         </div>
       </div>

@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import LogoHeader from '../../public/svg/LogoHeader';
 
 const Header = () => {
     return (  
-        <header className="flex justify-between items-center">
-            <h1>Logo</h1>
+        <header className="navbar flex justify-around items-center pb-8">
+            <Link to={'/'}>
+                <LogoHeader />
+            </Link>
             <nav className="flex gap-4 items-center">
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/recipes'}>Recipes</NavLink>

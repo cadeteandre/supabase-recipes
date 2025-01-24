@@ -14,7 +14,7 @@ const PopularRecipes = () => {
 
     return ( 
         <section>
-            <h2 className="font-bold mb-10">The most popular recipes</h2>
+            <h2 className="font-bold m-10 text-3xl">The most popular recipes</h2>
             {isLoading ? (
                 <p>Loading...</p>
             ) : popRecipes?.length ? (

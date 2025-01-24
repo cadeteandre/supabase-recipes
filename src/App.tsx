@@ -10,6 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import ProfilePage from './pages/ProfilePage';
 import LoginPage from './pages/LoginPage';
 import Favorites from './pages/Favorites';
+import RecipeCreate from './pages/RecipeCreate';
 
 function App() {
 
@@ -44,6 +45,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Favorites />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path='profile/recipe-create' 
+          element={
+            <ProtectedRoute>
+              <RecipeCreate />
             </ProtectedRoute>
           }
         />
