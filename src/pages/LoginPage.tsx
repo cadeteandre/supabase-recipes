@@ -36,7 +36,7 @@ const LoginPage = () => {
         }
       };
     return (  
-        <div className='flex flex-col items-center justify-center h-screen gap-2'>
+        <div className='flex flex-col items-center justify-center min-h-screen gap-2'>
             <h1 className='text-3xl'>Login</h1>
             <div className='flex flex-col gap-2 w-80'>
                 <label className="input input-bordered flex items-center gap-2">

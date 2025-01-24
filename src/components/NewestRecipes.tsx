@@ -13,8 +13,8 @@ const NewestRecipes = () => {
     }, [])
 
     return ( 
-        <section>
-            <h2 className="font-bold mb-10">The latest recipes</h2>
+        <section className="mt-10">
+            <h2 className="font-bold mb-10 text-3xl text-neutral">The latest recipes</h2>
             {isLoading ? (
                 <p>Loading...</p>
             ) : newestRecipes && newestRecipes.length ? (

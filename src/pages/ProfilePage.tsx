@@ -64,20 +64,22 @@ export default function ProfilePage() {
   if (!profile) return <Link className='btn' to={'/login'}>To Login</Link>;
 
   return (
-    <div className='flex justify-center'>
-      <div className="card bg-base-100 w-96 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">Profile</h2>
-          <p>Email: {profile.email}</p>
-            <p>First Name: {profile.first_name}</p>
-            <p>Last Name: {profile.last_name}</p>
-          <div className="card-actions justify-center">
-            <button className='btn' onClick={handleLogout}>Logout</button>
-            <Link className='btn bg-lime-700 text-slate-100' to={'./favorites'}>Favorites</Link>
-            <Link className='btn bg-lime-700 text-slate-100' to={'./recipe-create'}>Create Recipe</Link>
+    <main className="h-screen flex justify-center items-center">
+      <div className='flex justify-center'>
+        <div className="card bg-base-100 w-96 shadow-xl">
+          <div className="card-body">
+            <h2 className="card-title">Profile</h2>
+            <p>Email: {profile.email}</p>
+              <p>First Name: {profile.first_name}</p>
+              <p>Last Name: {profile.last_name}</p>
+            <div className="card-actions justify-center">
+              <button className='btn' onClick={handleLogout}>Logout</button>
+              <Link className='btn bg-lime-700 text-slate-100' to={'./favorites'}>Favorites</Link>
+              <Link className='btn bg-lime-700 text-slate-100' to={'./recipe-create'}>Create Recipe</Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

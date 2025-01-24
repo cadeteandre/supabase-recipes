@@ -32,7 +32,7 @@ const Favorites = () => {
     }, []);
 
     return (  
-        <div>
+        <div className="min-h-screen">
             <h1>My Favorite Recipes</h1>
                 {favoriteRecipes.map((recipe) => (
                     <FavoriteCard recipe={recipe} key={recipe.id} />

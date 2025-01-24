@@ -9,7 +9,7 @@ const RecipeCard: React.FC<IRecipeCardProps> = ({ recipe }) => {
 
     if(!recipe) return <p>Loading...</p>
     return (  
-        <div className="bg-base-100 w-72 shadow-xl rounded-lg">
+        <div className="bg-base-100 w-72 shadow-xl rounded-lg text-neutral">
             <Link to={`/profile/detail/${recipe.id}`}>
                 <figure className="" >
                     <img
@@ -25,7 +25,7 @@ const RecipeCard: React.FC<IRecipeCardProps> = ({ recipe }) => {
                 <p className="text-left text-sm">{recipe.description}</p>
                 <div className="card-actions justify-start">
                 <Link to={`/profile/detail/${recipe.id}`}>
-                    <button className="btn btn-primary">To the recipe</button>
+                    <button className="btn bg-neutral text-[#ccccc0]">To the recipe</button>
                 </Link>
                 </div>
             </div>

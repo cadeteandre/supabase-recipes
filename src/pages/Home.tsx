@@ -4,7 +4,7 @@ import PopularRecipes from "../components/PopularRecipes";
 
 const Home = () => {
     return (  
-        <main>
+        <main className="min-h-screen">
             <Banner />
             <PopularRecipes />
         </main>

@@ -1,7 +1,7 @@
 import LogoFooter from '../../public/svg/LogoFooter';
 const Footer = () => {
     return (  
-<footer className="footer bg-neutral text-neutral-content p-10">
+<footer className="footer bg-neutral text-neutral-content p-10 mt-10 rounded-lg">
   <aside>
     <LogoFooter />
   </aside>

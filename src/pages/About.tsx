@@ -2,7 +2,7 @@ import Banner from "../components/Banner";
 
 const About = () => {
     return (  
-        <main>
+        <main className="min-h-screen">
             <Banner />
             <p className="pt-10 pb-6 text-left">
                 Hello, we are Amanda and Pedro and we are happy to present our work on Rezeptwelt. While exploring this amazing website, we discovered a gastronomic universe full of delicious recipes, useful tips and culinary inspiration. Rezeptwelt is a place where experienced chefs and novice cooks can unite in their passion for food.

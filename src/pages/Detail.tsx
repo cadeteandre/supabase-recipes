@@ -17,7 +17,7 @@ const Detail = () => {
     }, [recipeId])
 
     return (  
-        <main>
+        <main className="min-h-screen">
             <DetailBanner recipeById={recipeById} />
             <RecipeDetails recipeById={recipeById} />
         </main>

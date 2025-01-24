@@ -4,7 +4,7 @@ import PopularRecipes from "../components/PopularRecipes";
 
 const Recipes = () => {
     return (  
-        <main className="pt-8 pb-6 flex flex-col gap-20">
+        <main className="min-h-screen">
             <Banner />
             <PopularRecipes />
             <NewestRecipes />
