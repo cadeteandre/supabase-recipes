@@ -73,9 +73,9 @@ export default function ProfilePage() {
               <p>First Name: {profile.first_name}</p>
               <p>Last Name: {profile.last_name}</p>
             <div className="card-actions justify-center">
-              <button className='btn' onClick={handleLogout}>Logout</button>
-              <Link className='btn bg-lime-700 text-slate-100' to={'./favorites'}>Favorites</Link>
-              <Link className='btn bg-lime-700 text-slate-100' to={'./recipe-create'}>Create Recipe</Link>
+              <button className='btn text-[#ccccc0] bg-neutral hover:text-neutral' onClick={handleLogout}>Logout</button>
+              <Link className='btn bg-lime-700 text-slate-100 hover:text-lime-700' to={'./favorites'}>Favorites</Link>
+              <Link className='btn bg-lime-700 text-slate-100 hover:text-lime-700' to={'./recipe-create'}>Create Recipe</Link>
             </div>
           </div>
         </div>

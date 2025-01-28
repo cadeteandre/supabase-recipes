@@ -25,7 +25,7 @@ const RecipeCard: React.FC<IRecipeCardProps> = ({ recipe }) => {
                 <p className="text-left text-sm">{recipe.description}</p>
                 <div className="card-actions justify-start">
                 <Link to={`/profile/detail/${recipe.id}`}>
-                    <button className="btn bg-neutral text-[#ccccc0]">To the recipe</button>
+                    <button className="btn bg-neutral text-[#ccccc0] hover:text-neutral">To the recipe</button>
                 </Link>
                 </div>
             </div>
