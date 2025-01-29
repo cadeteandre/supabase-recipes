@@ -1,16 +1,10 @@
 import { useEffect, useState } from 'react';
 import supabase from '../utils/backend/setupSupabase';
-import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import UserProfileCard from '../components/UserProfileCard';
+import Profile from '../interfaces/Profile';
 
 export default function ProfilePage() {
-  interface Profile {
-    email: string;
-    first_name: string;
-    last_name: string;
-    created_at: string;
-    updated_at: string;
-    [key: string]: string | number | boolean | null;
-  }
 
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -48,38 +42,11 @@ export default function ProfilePage() {
     fetchProfile();
   }, []);
 
-  const handleLogout = async () => {
-    try {
-      const { error } = await supabase.auth.signOut();
-      if (error) throw error;
-
-      console.log('User logged out');
-      setProfile(null);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   if (loading) return <p>Loading...</p>;
-  if (!profile) return <Link className='btn' to={'/login'}>To Login</Link>;
-
+  if (!profile) return <Navigate to="/login" replace />
   return (
-    <main className="h-screen flex justify-center items-center">
-      <div className='flex justify-center'>
-        <div className="card bg-base-100 w-96 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title">Profile</h2>
-            <p>Email: {profile.email}</p>
-              <p>First Name: {profile.first_name}</p>
-              <p>Last Name: {profile.last_name}</p>
-            <div className="card-actions justify-center">
-              <button className='btn text-[#ccccc0] bg-neutral hover:text-neutral' onClick={handleLogout}>Logout</button>
-              <Link className='btn bg-lime-700 text-slate-100 hover:text-lime-700' to={'./favorites'}>Favorites</Link>
-              <Link className='btn bg-lime-700 text-slate-100 hover:text-lime-700' to={'./recipe-create'}>Create Recipe</Link>
-            </div>
-          </div>
-        </div>
-      </div>
+    <main className="h-screen">
+      <UserProfileCard avatarUrl='' firstName={profile.first_name} lastName={profile.last_name} email={profile.email} setProfile={setProfile} />
     </main>
   );
 }
