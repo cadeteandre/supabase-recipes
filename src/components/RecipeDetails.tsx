@@ -43,7 +43,7 @@ const RecipeDetails: React.FC<IRecipeDetailsProps> = ({ recipeById }) => {
     };
     return (  
         <div className="flex flex-col gap-4">
-            <button onClick={toggleFavorite}>
+            <button onClick={toggleFavorite} className="text-3xl text-yellow-400 mt-10">
                 {isFavorite ? '★' : '☆'}
             </button>
             <h3 className="font-bold">Ingredients</h3>

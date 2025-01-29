@@ -4,6 +4,7 @@ import supabase from '../utils/backend/setupSupabase';
 const RecipeCreatePage = () => {
   const [uploadStatus, setUploadStatus] = useState<string | null>(null);
   const [ingredients, setIngredients] = useState<{ name: string; quantity: number }[]>([]);
+  
 
   const nameRef = useRef<HTMLInputElement>(null);
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
@@ -19,7 +20,7 @@ const RecipeCreatePage = () => {
   };
 
   const handleAddIngredient = () => {
-    setIngredients([...ingredients, { name: '', quantity: 0 }]);
+    setIngredients((prev) => [...prev, { name: '', quantity: 0 }]);
   };
 
   const handleIngredientChange = (index: number, field: 'name' | 'quantity', value: string | number) => {
@@ -107,7 +108,7 @@ const RecipeCreatePage = () => {
           .single();
 
         if (newIngredientError) {
-          console.error('Erro ao criar ingrediente:', newIngredientError);
+          console.error('Error creating ingredient:', newIngredientError);
           continue;
         }
 
@@ -123,7 +124,7 @@ const RecipeCreatePage = () => {
       ]);
     }
 
-    alert('Receita salva com sucesso!');
+    alert('Recipe saved successfully!');
   };
 
   return (
