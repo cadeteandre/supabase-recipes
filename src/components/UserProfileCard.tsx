@@ -34,8 +34,8 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({
     <article className="max-w-lg mx-auto bg-neutral text-[#ccccc0] rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
       <div className="flex flex-col items-center p-6">
         <img
-          className="w-24 h-24 rounded-full border-4 border-[#ccccc0]"
-          src={avatarUrl}
+          className="w-24 h-24 rounded-2xl border-2 border-[#ccccc0]"
+          src={avatarUrl === '' ? '/images/coffee-shop-brett.png' : avatarUrl}
           alt={`${firstName} ${lastName}`}
         />
         
@@ -47,23 +47,23 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({
         
         <div className="mt-6 flex space-x-4">
           <button
-            className="flex items-center justify-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+            className="flex items-center justify-center px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
             onClick={handleLogout}
           >
-            <span className="mr-2">🚪</span> Logout
+            <span className="mr-2"><img src="/images/open-door.png" alt="door-icon" className='w-8 h-8' /></span> Logout
           </button>
           <Link to={'./favorites'}>
             <button
-                className="flex items-center justify-center px-4 py-2 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-colors"
+                className="flex items-center justify-center px-3 py-2 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition-colors"
             >
-                <span className="mr-2">⭐</span> Favorites
+                <span className="mr-2"><img src="/images/star.png" alt="star-icon" className='w-8 h-8' /></span> Favorites
             </button>
           </Link>
           <Link to={'./recipe-create'}>
             <button
-                className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                className="flex items-center justify-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
             >
-                <span className="mr-2">🍳</span> Create Recipe
+                <span className="mr-2"><img src="/images/idea.png" alt="light-bulb-icon" className='w-8 h-8' /></span> Create Recipe
             </button>
           </Link>
         </div>

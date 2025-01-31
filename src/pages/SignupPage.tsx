@@ -2,9 +2,6 @@ import { useRef, useState } from 'react';
 import supabase from '../utils/backend/setupSupabase';
 import { AuthError } from '@supabase/supabase-js';
 import { Link } from 'react-router-dom';
-import EmailSvg from '../../public/svg/EmailSvg';
-import KeySvg from '../../public/svg/KeySvg';
-import PersonSvg from '../../public/svg/PersonSvg';
 
 export default function SignupPage() {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -51,19 +48,19 @@ export default function SignupPage() {
         <h1 className='text-3xl'>Sign Up</h1>
         <div className='flex flex-col gap-2 w-80'>
         <label className="input input-bordered flex items-center gap-2">
-            <PersonSvg />
+            <img src="/svg/person.svg" alt="person-icon" className="h-4 w-4 opacity-70" />
             <input type="text" className="grow" ref={firstNameRef} placeholder='First Name' />
         </label>
         <label className="input input-bordered flex items-center gap-2">
-            <PersonSvg />
+            <img src="/svg/person.svg" alt="person-icon" className="h-4 w-4 opacity-70" />
             <input type="text" className="grow" ref={lastNameRef} placeholder='Last Name' />
         </label>
         <label className="input input-bordered flex items-center gap-2">
-            <EmailSvg />
+            <img className="h-4 w-4 opacity-70" src='./svg/email.svg' alt="email-icon" />
             <input type="text" className="grow" ref={emailRef} placeholder='E-Mail' />
         </label>
         <label className="input input-bordered flex items-center gap-2">
-            <KeySvg />
+            <img src="/svg/key.svg" alt="key-icon" className="h-4 w-4 opacity-70" />
             <input type="password" className="grow" ref={passwordRef} placeholder='Password' />
         </label>
         <button className='btn' onClick={handleSignUp}>Register</button>

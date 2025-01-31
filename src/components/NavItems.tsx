@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { navLinks } from "../constants";
+import { navLinks } from "../constants/navbarData";
 
 const NavItems = () => {
     return (  
@@ -7,7 +7,7 @@ const NavItems = () => {
             {navLinks.map(({ id, name, path }) => (
                 <NavLink key={id} to={path}
                     className={({ isActive }) => 
-                        `btn text-[#ccccc0] hover:text-neutral ${isActive ? 'text-neutral' : 'bg-neutral'}`
+                        `btn text-[#ccccc0] border hover:text-neutral ${isActive ? 'text-neutral border-neutral' : 'bg-neutral sm:p-2'}`
                 }>
                     {name}
                 </NavLink>
