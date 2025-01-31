@@ -25,7 +25,8 @@ const RecipeCreatePage = () => {
 
   const handleIngredientChange = (index: number, field: 'name' | 'quantity', value: string | number) => {
     const newIngredients = [...ingredients];
-    newIngredients[index][field] = value;
+    // newIngredients[index][field] = value;
+    console.log(index, field, value);
     setIngredients(newIngredients);
   };
 
