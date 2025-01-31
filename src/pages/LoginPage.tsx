@@ -45,7 +45,7 @@ const LoginPage = () => {
             <div className='flex flex-col gap-2 w-80'>
                 <label className="input input-bordered flex items-center gap-2">
                     <img className="h-4 w-4 opacity-70" src='./svg/email.svg' alt="email-icon" />
-                    <input type="text" className="grow" ref={emailRef} placeholder='E-Mail' />
+                    <input type="email" className="grow" ref={emailRef} placeholder='E-Mail' />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
                     <img src="/svg/key.svg" alt="key-icon" className="h-4 w-4 opacity-70" />

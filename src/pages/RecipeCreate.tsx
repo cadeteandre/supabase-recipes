@@ -88,42 +88,42 @@ const RecipeCreatePage = () => {
       return;
     }
 
-    const recipeId = recipeData[0].id;
+    // const recipeId = recipeData[0].id;
 
-    for (const ingredient of ingredients) {
-      let ingredientId;
+    // for (const ingredient of ingredients) {
+    //   let ingredientId;
 
-      const { data: existingIngredient } = await supabase
-        .from('ingredients')
-        .select('id')
-        .eq('name', ingredient.name)
-        .single();
+    //   const { data: existingIngredient } = await supabase
+    //     .from('ingredients')
+    //     .select('id')
+    //     .eq('name', ingredient.name)
+    //     .single();
 
-      if (existingIngredient) {
-        ingredientId = existingIngredient.id;
-      } else {
-        const { data: newIngredient, error: newIngredientError } = await supabase
-          .from('ingredients')
-          .insert([{ name: ingredient.name }])
-          .select('id')
-          .single();
+    //   if (existingIngredient) {
+    //     ingredientId = existingIngredient.id;
+    //   } else {
+    //     const { data: newIngredient, error: newIngredientError } = await supabase
+    //       .from('ingredients')
+    //       .insert([{ name: ingredient.name }])
+    //       .select('id')
+    //       .single();
 
-        if (newIngredientError) {
-          console.error('Error creating ingredient:', newIngredientError);
-          continue;
-        }
+    //     if (newIngredientError) {
+    //       console.error('Error creating ingredient:', newIngredientError);
+    //       continue;
+    //     }
 
-        ingredientId = newIngredient.id;
-      }
+    //     ingredientId = newIngredient.id;
+    //   }
 
-      await supabase.from('ingredients_recipes').insert([
-        {
-          recipe_id: recipeId,
-          ingredient_id: ingredientId,
-          quantity: ingredient.quantity,
-        },
-      ]);
-    }
+    //   await supabase.from('ingredients_recipes').insert([
+    //     {
+    //       recipe_id: recipeId,
+    //       ingredient_id: ingredientId,
+    //       quantity: ingredient.quantity,
+    //     },
+    //   ]);
+    // }
 
     alert('Recipe saved successfully!');
   };
